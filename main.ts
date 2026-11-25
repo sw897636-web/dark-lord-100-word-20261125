@@ -17,15 +17,13 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 const MONOLOGUE =
-  "Come in. Mind the third step, it wobbles, and the torch needs oil " +
-  "since spring. You came to slay me, I suppose. Everyone does, " +
-  "eventually, usually on a Tuesday. Sit. The throne is cold, the " +
-  "crown pinches behind the ears, and the map of the Nine Valleys " +
-  "lies on the table where I left it, half conquered, half " +
-  "forgotten. I have the poison, the trapdoor, the speech about " +
-  "destiny. All rehearsed. But the candles burn low, the ravens " +
-  "have roosted, and honestly, hero, could we do the dying " +
-  "tomorrow? Tonight I would rather lock the gate and sleep.";
+  "Ah. The hero. Put the sword down, you'll scratch the floor; I only just had it waxed. " +
+  "Sit if you like. The guards are asleep; I didn't wake them. " +
+  "Yes, I burned your village. Your father's too, and possibly his father's. " +
+  "It's been a lot of villages. Forty years. The plan still stands: the eclipse, the obsidian gate, " +
+  "the army of the restless dead. They are very restless. I am not. " +
+  "The speech is written somewhere. It begins 'Tremble' and runs nine pages. " +
+  "Could you just assume I said it? Tremble. There. Now strike me down or pass me that blanket.";
 
 const OUT_PATH = "/output/entry.txt";
 
@@ -36,8 +34,8 @@ const words = MONOLOGUE.trim().split(/\s+/).length;
 if (MONOLOGUE.length < 1 || MONOLOGUE.length > 600) {
   throw new Error(`entry is ${MONOLOGUE.length} characters, outside 1-600`);
 }
-if (words < 95 || words > 100) {
-  throw new Error(`entry is ${words} words, outside 95-100`);
+if (words < 95 || words > 105) {
+  throw new Error(`entry is ${words} words, outside 95-105`);
 }
 
 mkdirSync(dirname(OUT_PATH), { recursive: true });
